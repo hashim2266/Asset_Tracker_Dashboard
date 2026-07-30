@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(30, 80, 55, 0.4);
+    border-radius: 20px;
+  }
+}
+
+body {
+  background-color: #091712;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  color: #F1F5F9;
+}
+
+/* REFINED ENTERPRISE CARD WRAPPER WITH LUSH TORCHLIGHT GLOW & FLOATING GLASSMORPHISM ('TIMBUL') */
+.torch-light-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(8, 32, 21, 0.88) 0%, rgba(5, 23, 15, 0.92) 50%, rgba(3, 15, 10, 0.96) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  overflow: hidden;
+  box-shadow: 
+    0 16px 40px -8px rgba(0, 0, 0, 0.8),
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(16, 185, 129, 0.12);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Torchlight radial spotlight glow at top center */
+.torch-light-card::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 240px;
+  background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.28) 0%, rgba(20, 184, 166, 0.12) 45%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Metallic top specular highlight border accent */
+.torch-light-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.8), rgba(52, 211, 153, 0.95), rgba(20, 184, 166, 0.95), rgba(245, 158, 11, 0.8), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.torch-light-card:hover {
+  border-color: rgba(52, 211, 153, 0.6);
+  box-shadow: 
+    0 24px 50px -10px rgba(0, 0, 0, 0.9),
+    0 8px 20px rgba(0, 0, 0, 0.6),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.28),
+    0 0 32px rgba(16, 185, 129, 0.3);
+  transform: translateY(-4px) scale(1.003);
+}
+
+/* Additional utility class for 3D raised floating glass boxes */
+.timbul-glass-box {
+  background: linear-gradient(135deg, rgba(9, 35, 23, 0.85) 0%, rgba(4, 20, 13, 0.90) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  box-shadow: 
+    0 14px 35px -6px rgba(0, 0, 0, 0.75),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 18px rgba(16, 185, 129, 0.10);
+  transition: all 0.3s ease;
+}
+
+.timbul-glass-box:hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 
+    0 20px 45px -8px rgba(0, 0, 0, 0.85),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.22),
+    0 0 25px rgba(245, 158, 11, 0.20);
+  transform: translateY(-3px);
+}

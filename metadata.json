@@ -1,0 +1,8 @@
+{
+  "name": "Remix AssetMonitoringSystem",
+  "description": "Imported from GitHub: hashim2266/AssetManagement_Dashboard",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
